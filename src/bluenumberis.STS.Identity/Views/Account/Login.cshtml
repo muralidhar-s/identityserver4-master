@@ -1,0 +1,220 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@using bluenumberis.STS.Identity.Configuration.Interfaces
+@using bluenumberis.STS.Identity.Helpers.Localization
+@inject IViewLocalizer Localizer
+@model bluenumberis.STS.Identity.ViewModels.Account.LoginViewModel
+@inject IRootConfiguration RootConfiguration
+
+<div class="login-page">
+    <!--<div class="page-header">
+        <h1>@Localizer["Title"]</h1>
+    </div>-->
+
+    @await Html.PartialAsync("_ValidationSummary")
+    <div class="row">
+
+        @if (Model.EnableLocalLogin)
+        {
+            <div class="container">
+                <div class="row h100vh">
+                    <div class="col-sm-9 col-md-7 col-lg-5 my-auto mx-auto">
+                        <div>
+                            <div id="humanId" style='@(@Model.IsHumanIdLogin ? "display: block;" : "display: none;")'>
+                                <img class="mx-auto d-block img-fluid" src="~/images/humanid-logo.png">
+                                <br />
+                                <div class="row py-1">
+                                    <div class="col-md-12 text-center">
+                                        <div class="verify-message"> <i class="fa fa-lock"></i>  Your phone number is deleted after verification</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="bluenumberId" style='@(@Model.IsHumanIdLogin ? "display: none;" : "display: block;")'>
+                                <img class="mx-auto d-block" src="~/images/logo.png">
+                            </div>
+                            <br />
+                            <div class="card-body">
+                                <form asp-route="Login">
+                                    <input type="hidden" asp-for="ReturnUrl" />
+                                    <input type="hidden" id="CountryIndex" value="@Model.CountryIndex" asp-for="CountryIndex" aria-label="CountryIndex">
+                                    <input type="hidden" id="CountryCode" value="@Model.CountryCode" asp-for="CountryCode" aria-label="CountryCode">
+                                    <input type="hidden" value="@Model.IsHumanIdLogin" asp-for="IsHumanIdLogin" aria-label="IsHumanIdLogin" />
+
+                                    <fieldset>
+
+                                        @if (!Model.IsPhoneNumber && !Model.IsWrongOtp)
+                                        {
+                                            <div class="form-group row">
+                                                <div class="col-md-4 col-5 p-0 country-mobile">
+                                                    <select id="countries">
+                                                        @foreach (var country in Model.CountryCodes)
+                                                        {
+                                                            <option value="@country.Code" data-image="@country.Flag" data-title="@country.Code"> @country.Number</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-8 col-7 p-0 country-mobile">
+                                                    <input class="form-control" type="number" onkeypress="return isNumberKey(event)" placeholder="@Localizer[LoginPolicyResolutionLocalizer.GetUserNameLocalizationKey(Model.LoginResolutionPolicy)]" asp-for="PhoneNumber" aria-label="Username" aria-describedby="input-username" autofocus>
+                                                </div>
+                                            </div>
+                                        }
+
+                                        @if (Model.IsPhoneNumber || Model.IsWrongOtp)
+                                        {
+                                            <div class="form-group row">
+                                                <div class="col-md-12 p-0">
+                                                    <div class="input-group">
+                                                        <div class="row mb-3">
+                                                            <div class="col-md-12">
+                                                                Please enter the 4 digit code you received as SMS to <span class="text-blue"> @Model.PhoneNumber </span>
+                                                            </div>
+                                                        </div>
+                                                        <input type="hidden" value="@Model.CountryNum" asp-for="CountryNum" aria-label="CountryNum" />
+                                                        <input type="hidden" value="@Model.PhoneNumber" asp-for="PhoneNumber" aria-label="PhoneNumber" />
+                                                        <input type="hidden" value="@Model.ReferenceId" asp-for="ReferenceId" aria-label="ReferenceId" />
+                                                        <input type="hidden" value="@Model.IsUserExists" asp-for="IsUserExists" aria-label="IsUserExists" />
+                                                        <input type="hidden" value="@Model.ReturnUrl" asp-for="ReturnUrl" aria-label="ReturnUrl">
+                                                        <input type="hidden" value="@Model.ResendOtpClickCount" asp-for="ResendOtpClickCount" aria-label="ResendOtpClickCount">
+                                                        <input type="hidden" value="@Model.CountryCode" asp-for="CountryCode" aria-label="CountryCode">
+
+                                                        <div class="row otp-align">
+                                                            <div class="col-10 text-center offset-2">
+                                                                <div class="otp-digits">
+                                                                    <div>
+                                                                        <input type="number" maxlength="1" size="3" class="form-control" aria-label="Otp1" aria-describedby="input-password" asp-for="Otp1" autocomplete="off" autofocus onkeyup="moveCursor(this, 'Otp2')" onkeypress="return isNumberKey(event)" />
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="number" maxlength="1" size="3" class="form-control" aria-label="Otp2" aria-describedby="input-password" asp-for="Otp2" autocomplete="off" onkeyup="moveCursor(this, 'Otp3')" onkeypress="return isNumberKey(event)"/>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="number" maxlength="1" size="3" class="form-control" aria-label="Otp3" aria-describedby="input-password" asp-for="Otp3" autocomplete="off" onkeyup="moveCursor(this, 'Otp4')" onkeypress="return isNumberKey(event)"/>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="number" maxlength="1" size="3" class="form-control" aria-label="Otp4" aria-describedby="input-password" asp-for="Otp4" autocomplete="off" onkeypress="return isNumberKey(event)"/>
+                                                                    </div>
+                                                                </div>
+                                                                @if (Model.IsWrongOtp)
+                                                                {
+                                                                    <div class="otp-error-test mt-2">Please Enter The Correct OTP</div>
+                                                                }
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-12 p-0">
+                                                @if (@Model.IsPhoneNumber)
+                                                {
+                                                    <div id="humanLoginId" style='@(@Model.IsHumanIdLogin ? "display: block;" : "display: none;")'>                                                    
+                                                        <button class="btn-logo btn btn-lg btn-block" name="button" value="sendotp">  @Localizer["SendOtp"]</button>
+                                                    </div>
+                                                    <div id="BluenumberLoginId" style='@(@Model.IsHumanIdLogin ? "display: none;" : "display: block;")'>                                                    
+                                                        <button class="btn-blue btn btn-lg btn-block" name="button" value="sendotp">  @Localizer["SendOtp"]</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-6 float-left margin-top-5">
+                                                            <div id="timer"></div>
+                                                            <button class="btn btn-white" id="resendotpid" name="button" value="resendotp">@Localizer["ResendOtp"]</button>
+                                                        </div>
+                                                        <div class="col-6 text-right margin-top-5">
+                                                            <button class="btn btn-white" id="tryanotherno" name="button" value="tryanotherno">Try different number</button>
+                                                        </div>
+                                                    </div>
+
+                                                    @* <button class="btn-blue btn btn-lg btn-block" name="button" value="sendotp">  @Localizer["SendOtp"]</button>
+                                                        <div class="row">
+                                                            <div class="col-6 float-left margin-top-5">
+                                                                <div id="timer"></div>
+                                                            </div>
+                                                            <div class="col-6 text-right margin-top-5">
+                                                                <button class="btn btn-white" id="resendotpid" name="button" value="resendotp">@Localizer["ResendOtp"]</button>
+                                                            </div>
+                                                        </div> *@
+                                                    @* <button class="btn-blue btn" id="resendotpid" name="button" value="resendotp">  @Localizer["ResendOtp"]</button>
+                                                        <p id="timer">timer</p> *@
+                                                    @* <a asp-action="ResendLoginOtp" id="resendotp" asp-for="@Model" class="text-center blue mtop10 resendotp" value="resendotp">@Localizer["ResendOtp"]</a> *@
+                                                    @* <a asp-controller="Account" asp-action="ResendLoginOtp" id="loss-btn" data-ajax="true" data-ajax-update="losses" data-ajax-success="addLoss" data-ajax-method="GET">Add</a>                                                         *@
+                                                }
+                                                else
+                                                {
+                                                    <div id="btnHumanId" style='@(@Model.IsHumanIdLogin ? "display: block;" : "display: none;")'>
+                                                        <div class="row py-1">
+                                                            <div class="col-md-12 text-center">
+                                                                <button class="btn btn-logo w-100" name="button" value="login">
+                                                                    <i class="fa fa-shield-alt"></i>Anonymous Login with human<span class="split-text">ID</span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="btnBlunumberId" style='@(@Model.IsHumanIdLogin ? "display: none;" : "display: block;")'>
+                                                        <button class="btn-blue btn btn-lg btn-block" name="button" value="login"> @Localizer["Login"]</button>
+                                                    </div>
+                                                }
+
+                                                @if (RootConfiguration.RegisterConfiguration.Enabled)
+                                                {
+                                                    <a asp-action="Register" asp-controller="Account" class="btn btn-dark" value="forgot">@Localizer["Register"]</a>
+                                                }
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+
+                                @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                                {
+                                    <div class="text-danger">@Model.ErrorMessage</div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (Model.VisibleExternalProviders.Any())
+        {
+            <div class="col-sm-6 external-providers">
+                <div class="card mt-3">
+                    <h5 class="card-header">@Localizer["ExternalLogin"]</h5>
+                    <div class="card-body">
+                        <ul class="list-inline">
+                            @foreach (var provider in Model.VisibleExternalProviders)
+                            {
+                                <li class="list-inline-item">
+                                    <a class="btn btn-primary"
+                                       asp-action="ExternalLogin"
+                                       asp-route-provider="@provider.AuthenticationScheme"
+                                       asp-route-returnUrl="@Model.ReturnUrl">
+                                        @provider.DisplayName
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (!Model.EnableLocalLogin && !Model.VisibleExternalProviders.Any())
+        {
+            <div class="alert alert-warning">
+                <strong>@Localizer["InvalidRequest"]</strong>
+                @Localizer["NoSchema"]
+            </div>
+        }
+    </div>
+</div>
+
+@section scripts
+{
+    @if (Model.IsResendOtp && Model.ResendOtpClickCount < 3)
+    {
+        <script src="~/js/resendotp.js"></script>
+    }
+
+    <script src="~/js/login.js"></script>
+    <script src="~/js/movecursor.js"></script>
+    <script src="~/js/acceptnumbers.js"></script>
+}

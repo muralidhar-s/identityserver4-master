@@ -1,0 +1,33 @@
+﻿{
+    "Serilog": {
+        "MinimumLevel": {
+            "Default": "Error",
+            "Override": {
+                "Skoruba": "Information"
+            }
+        },
+        "WriteTo": [
+            {
+                "Name": "Console"
+            },
+            {
+                "Name": "File",
+                "Args": {
+                    "path": "Log\\skoruba_admin.txt",
+                    "rollingInterval": "Day"
+                }
+            },
+            {
+                "Name": "MSSqlServer",
+              "Args": {
+                "connectionString": "server=bnsql-mysql.prod.svc.cluster.local;database=bluenumberdevid;uid=root;pwd=rskf0myh",
+                "tableName": "Log",
+                "columnOptionsSection": {
+                  "addStandardColumns": [ "LogEvent" ],
+                  "removeStandardColumns": [ "Properties" ]
+                }
+              }
+            }
+        ]
+    }
+}

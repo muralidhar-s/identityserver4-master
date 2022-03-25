@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<div class="page-header logged-out-container">
+    <h1>
+        <small>Mobile Number does not exists.</small>
+        <!--small>@Localizer["SubTitle"]</small-->
+    </h1>
+
+        @if (Model.ReturnUrl != null)
+        {
+            <div>
+                @Localizer["Click"] <a class="ReturnUrl" href="@Model.ReturnUrl">@Localizer["Here"]</a> @Localizer["Return"]
+                <span>@Model.ClientName</span>.
+            </div>
+        }
+</div>
+
+@section scripts
+	{
+    @if (Model.RedirectFromErrorPage)
+    {
+    <script src="~/js/signout-redirect.js"></script>
+        }
+    }

@@ -1,0 +1,34 @@
+﻿kind: Service
+apiVersion: v1
+metadata:
+  name: bn-global-id-service
+  namespace: dev
+spec:
+  selector:
+    app: bn-global-id
+  ports:
+    - port: 8080 # Default port for image
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bn-global-id-deployment
+  namespace: dev
+  labels:
+    app: bn-global-id
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bn-global-id
+  template:
+    metadata:
+      labels:
+        app: bn-global-id
+    spec:
+      containers:
+      - name: bn-global-id
+        image: 708447817741.dkr.ecr.us-east-2.amazonaws.com/bn-global-id:{{BUILD_NUMBER}}
+        ports:
+        - containerPort: 8080
+

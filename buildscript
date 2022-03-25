@@ -1,0 +1,20 @@
+#!/bin/bash
+
+IMAGE="$1"
+MAJOR=$((1000 + RANDOM % 9999))
+MINOR=$((RANDOM % 9999))
+BUILD_NUMBER=$MAJOR.$MINOR
+DOCKERFILE="Dockerfile.$IMAGE"
+echo "hello world $IMAGE - $BUILD_NUMBER - $DOCKERFILE"
+
+docker build -t $IMAGE:$BUILD_NUMBER -f $DOCKERFILE .
+
+aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 708447817741.dkr.ecr.us-east-2.amazonaws.com/$IMAGE
+
+docker tag $IMAGE:$BUILD_NUMBER 708447817741.dkr.ecr.us-east-2.amazonaws.com/$IMAGE:$BUILD_NUMBER
+
+docker push 708447817741.dkr.ecr.us-east-2.amazonaws.com/$IMAGE:$BUILD_NUMBER
+
+template=`cat "bluenumber-$IMAGE.yaml" | sed "s/{{BUILD_NUMBER}}/$BUILD_NUMBER/g"`
+
+echo "$template" | kubectl apply -f -

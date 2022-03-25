@@ -1,0 +1,376 @@
+{
+  "CountryCodes": [
+    {
+      "Name": "Argentina",
+      "Number": "+54",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg",
+      "Code": "AR"
+    },
+    {
+      "Name": "Australia",
+      "Number": "+61",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg",
+      "Code": "AU"
+    },
+    {
+      "Name": "Austria",
+      "Number": "+43",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg",
+      "Code": "AT"
+    },
+    {
+      "Name": "Bangladesh",
+      "Number": "+880",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh.svg",
+      "Code": "BD"
+    },
+    {
+      "Name": "Belgium",
+      "Number": "+32",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Belgium.svg",
+      "Code": "BE"
+    },
+    {
+      "Name": "Botswana",
+      "Number": "+267",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_Botswana.svg",
+      "Code": "BW"
+    },
+    {
+      "Name": "Brunei Darussalam",
+      "Number": "+673",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Brunei.svg",
+      "Code": "CD"
+    },
+    {
+      "Name": "Canada",
+      "Number": "+1",
+      "Flag": "https://upload.wikimedia.org/wikipedia/en/c/cf/Flag_of_Canada.svg",
+      "Code": "CA"
+    },
+    {
+      "Name": "Chile",
+      "Number": "+56",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/7/78/Flag_of_Chile.svg",
+      "Code": "CL"
+    },
+    {
+      "Name": "Colombia",
+      "Number": "+57",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg",
+      "Code": "CO"
+    },
+    {
+      "Name": "Costa Rica",
+      "Number": "+506",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Costa_Rica_%28state%29.svg",
+      "Code": "CY"
+    },
+    {
+      "Name": "Denmark",
+      "Number": "+45",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Flag_of_Denmark.svg",
+      "Code": "DK"
+    },
+    {
+      "Name": "Ecuador",
+      "Number": "+593",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Flag_of_Ecuador.svg",
+      "Code": "EC"
+    },
+    {
+      "Name": "Ethiopia",
+      "Number": "+251",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/7/71/Flag_of_Ethiopia.svg",
+      "Code": "ET"
+    },
+    {
+      "Name": "France",
+      "Number": "+33",
+      "Flag": "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg",
+      "Code": "FR"
+    },
+    {
+      "Name": "Germany",
+      "Number": "+49",
+      "Flag": "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg",
+      "Code": "DE"
+    },
+    {
+      "Name": "Ghana",
+      "Number": "+233",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Ghana.svg",
+      "Code": "GH"
+    },
+    {
+      "Name": "India",
+      "Number": "+91",
+      "Flag": "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
+      "Code": "IN"
+    },
+    {
+      "Name": "Indonesia",
+      "Number": "+62",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg",
+      "Code": "ID"
+    },
+    {
+      "Name": "Ireland",
+      "Number": "+353",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg",
+      "Code": "IE"
+    },
+    {
+      "Name": "Israel",
+      "Number": "+972",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg",
+      "Code": "IL"
+    },
+    {
+      "Name": "Italy",
+      "Number": "+39",
+      "Flag": "https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg",
+      "Code": "IT"
+    },
+    {
+      "Name": "Jamaica",
+      "Number": "+1 876",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Jamaica.svg",
+      "Code": "JM"
+    },
+    {
+      "Name": "Japan",
+      "Number": "+81",
+      "Flag": "https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg",
+      "Code": "JP"
+    },
+    {
+      "Name": "Jordan",
+      "Number": "+962",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Jordan.svg",
+      "Code": "JO"
+    },
+    {
+      "Name": "Kenya",
+      "Number": "+254",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Kenya.svg",
+      "Code": "KE"
+    },
+    {
+      "Name": "Liechtenstein",
+      "Number": "+423",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/4/47/Flag_of_Liechtenstein.svg",
+      "Code": "LI"
+    },
+    {
+      "Name": "Luxembourg",
+      "Number": "+352",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/d/da/Flag_of_Luxembourg.svg",
+      "Code": "LU"
+    },
+    {
+      "Name": "Malaysia",
+      "Number": "+60",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/6/66/Flag_of_Malaysia.svg",
+      "Code": "MY"
+    },
+    {
+      "Name": "Malta",
+      "Number": "+356",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Malta.svg",
+      "Code": "MT"
+    },
+    {
+      "Name": "Mexico",
+      "Number": "+52",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg",
+      "Code": "MX"
+    },
+    {
+      "Name": "Monaco",
+      "Number": "+377",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Flag_of_Monaco.svg",
+      "Code": "MC"
+    },
+    {
+      "Name": "Morocco",
+      "Number": "+212",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Morocco.svg",
+      "Code": "MA"
+    },
+    {
+      "Name": "Namibia",
+      "Number": "+264",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Namibia.svg",
+      "Code": "NA"
+    },
+    {
+      "Name": "Netherlands",
+      "Number": "+31",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg",
+      "Code": "NL"
+    },
+    {
+      "Name": "New Caledonia",
+      "Number": "+687",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/6/66/Flag_of_FLNKS.svg",
+      "Code": "NC"
+    },
+    {
+      "Name": "New Zealand",
+      "Number": "+64",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Flag_of_New_Zealand.svg",
+      "Code": "NG"
+    },
+    {
+      "Name": "Nigeria",
+      "Number": "+234",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg",
+      "Code": "NG"
+    },
+    {
+      "Name": "Norway",
+      "Number": "+47",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg",
+      "Code": "IN"
+    },
+    {
+      "Name": "Oman",
+      "Number": "+968",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Oman.svg",
+      "Code": "NO"
+    },
+    {
+      "Name": "Pakistan",
+      "Number": "+92",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Pakistan.svg",
+      "Code": "PK"
+    },
+    {
+      "Name": "Panama",
+      "Number": "+507",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Flag_of_Panama.svg",
+      "Code": "PA"
+    },
+    {
+      "Name": "Peru",
+      "Number": "+51",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg",
+      "Code": "PE"
+    },
+    {
+      "Name": "Philippines",
+      "Number": "+63",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg",
+      "Code": "PH"
+    },
+    {
+      "Name": "Puerto Rico",
+      "Number": "+1939",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/2/28/Flag_of_Puerto_Rico.svg",
+      "Code": "PR"
+    },
+    {
+      "Name": "Qatar",
+      "Number": "+974",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Qatar.svg",
+      "Code": "QA"
+    },
+    {
+      "Name": "Saudi Arabia",
+      "Number": "+966",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg",
+      "Code": "SA"
+    },
+    {
+      "Name": "Singapore",
+      "Number": "+65",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Singapore.svg",
+      "Code": "SG"
+    },
+    {
+      "Name": "South Africa",
+      "Number": "+27",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg",
+      "Code": "ZA"
+    },
+    {
+      "Name": "Spain",
+      "Number": "+34",
+      "Flag": "https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg",
+      "Code": "ES"
+    },
+    {
+      "Name": "Sri Lanka",
+      "Number": "+94",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Sri_Lanka.svg",
+      "Code": "LK"
+    },
+    {
+      "Name": "Sweden",
+      "Number": "+46",
+      "Flag": "https://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden.svg",
+      "Code": "SE"
+    },
+    {
+      "Name": "Switzerland",
+      "Number": "+41",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/0/08/Flag_of_Switzerland_%28Pantone%29.svg",
+      "Code": "CH"
+    },
+    {
+      "Name": "Tunisia",
+      "Number": "+216",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Tunisia.svg",
+      "Code": "TN"
+    },
+    {
+      "Name": "Turkey",
+      "Number": "+90",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg",
+      "Code": "TR"
+    },
+    {
+      "Name": "Uganda",
+      "Number": "+256",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Flag_of_Uganda.svg",
+      "Code": "UG"
+    },
+    {
+      "Name": "Ukraine",
+      "Number": "+380",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg",
+      "Code": "UA"
+    },
+    {
+      "Name": "United Arab Emirates",
+      "Number": "+971",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg",
+      "Code": "AE"
+    },
+    {
+      "Name": "United Kingdom",
+      "Number": "+44",
+      "Flag": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg",
+      "Code": "GB"
+    },
+    {
+      "Name": "United States",
+      "Number": "+1",
+      "Flag": "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg",
+      "Code": "US"
+    },
+    {
+      "Name": "Zambia",
+      "Number": "+260",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Zambia.svg",
+      "Code": "ZM"
+    },
+    {
+      "Name": "Zimbabwe",
+      "Number": "+263",
+      "Flag": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Flag_of_Zimbabwe.svg",
+      "Code": "ZW"
+    }
+  ]
+}

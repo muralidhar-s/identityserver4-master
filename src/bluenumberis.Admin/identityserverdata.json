@@ -1,0 +1,154 @@
+﻿{
+  "IdentityServerData": {
+    "IdentityResources": [
+      {
+        "Name": "roles",
+        "Enabled": true,
+        "DisplayName": "Roles",
+        "UserClaims": [
+          "role"
+        ]
+      },
+      {
+        "Name": "openid",
+        "Enabled": true,
+        "Required": true,
+        "DisplayName": "Your user identifier",
+        "UserClaims": [
+          "sub"
+        ]
+      },
+      {
+        "Name": "profile",
+        "Enabled": true,
+        "DisplayName": "User profile",
+        "Description": "Your user profile information (first name, last name, etc.)",
+        "Emphasize": true,
+        "UserClaims": [
+          "name",
+          "family_name",
+          "given_name",
+          "middle_name",
+          "nickname",
+          "preferred_username",
+          "profile",
+          "picture",
+          "website",
+          "gender",
+          "birthdate",
+          "zoneinfo",
+          "locale",
+          "updated_at"
+        ]
+      },
+      {
+        "Name": "email",
+        "Enabled": true,
+        "DisplayName": "Your email address",
+        "Emphasize": true,
+        "UserClaims": [
+          "email",
+          "email_verified"
+        ]
+      },
+      {
+        "Name": "address",
+        "Enabled": true,
+        "DisplayName": "Your address",
+        "Emphasize": true,
+        "UserClaims": [
+          "address"
+        ]
+      }
+    ],
+    "ApiResources": [
+      {
+        "Name": "MyClientId_api",
+        "Scopes": [
+          {
+            "Name": "MyClientId_api",
+            "DisplayName": "MyClientId_api",
+            "Required": true,
+            "UserClaims": [
+              "role",
+              "name"
+            ]
+          }
+        ]
+      }
+    ],
+    "Clients": [
+      {
+        "ClientId": "MyClientId",
+        "ClientName": "MyClientId",
+        "ClientUri": "http://dev.authadmin.bluenumber.com",
+        "AllowedGrantTypes": [
+          "hybrid"
+        ],
+        "ClientSecrets": [
+          {
+            "Value": "MyClientSecret"
+          }
+        ],
+        "RedirectUris": [
+          "http://dev.authadmin.bluenumber.com/signin-oidc"
+        ],
+        "FrontChannelLogoutUri": "http://dev.authadmin.bluenumber.com/signout-oidc",
+        "PostLogoutRedirectUris": [
+          "http://dev.authadmin.bluenumber.com/signout-callback-oidc"
+        ],
+        "AllowedCorsOrigins": [
+          "http://dev.authadmin.bluenumber.com"
+        ],
+        "AllowedScopes": [
+          "openid",
+          "email",
+          "profile",
+          "roles"
+        ]
+      },
+      {
+        "ClientId": "MyClientId_api_swaggerui",
+        "ClientName": "MyClientId_api_swaggerui",
+        "AllowedGrantTypes": [
+          "implicit"
+        ],
+        "RedirectUris": [
+          "http://dev.authapi.bluenumber.com/swagger/oauth2-redirect.html"
+        ],
+        "AllowedScopes": [
+          "MyClientId_api"
+        ],
+        "AllowAccessTokensViaBrowser": true
+
+      },
+      {
+        "ClientId": "spacode",
+        "ClientName": "SPA Client",
+        "ClientUri": "http://ec2-18-189-182-190.us-east-2.compute.amazonaws.com",
+
+        "AllowedGrantTypes": [
+          "authorization_code",
+          "code"
+        ],
+        "RedirectUris": [
+          "http://ec2-18-189-182-190.us-east-2.compute.amazonaws.com/index.html",
+          "http://ec2-18-189-182-190.us-east-2.compute.amazonaws.com/callback.html",
+          "http://ec2-18-189-182-190.us-east-2.compute.amazonaws.com/silent.html",
+          "http://ec2-18-189-182-190.us-east-2.compute.amazonaws.com/popup.html",
+          "http://ec2-18-189-182-190.us-east-2.compute.amazonaws.com"
+        ],
+        "RequirePkce": true,
+        "RequireClientSecret": false,
+        "RequireConsent": false,
+        "AllowOfflineAccess": true,
+
+        "PostLogoutRedirectUris": [ "http://ec2-18-189-182-190.us-east-2.compute.amazonaws.com" ],
+        "AllowedCorsOrigins": [ "http://ec2-18-189-182-190.us-east-2.compute.amazonaws.com" ],
+
+        "AlwaysIncludeuserClaimsInIdToken": true,
+        "AllowedScopes": [ "auth_api", "openid", "profile", "api1", "email", "offline_access", "api" ]
+      }
+    ]
+  }
+}
